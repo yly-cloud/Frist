@@ -7,6 +7,17 @@ public class Student {
     private String email;
     private String pwd;
 
+    public Student() {
+    }
+
+    public Student(Integer id, String name, Integer age, String email, String pwd) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.pwd = pwd;
+    }
+
     public Integer getId() {
         return id;
     }

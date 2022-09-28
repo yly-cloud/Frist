@@ -20,7 +20,7 @@ public class SqlSessionUtils {
         }
     }
 
-    public static SqlSession getSqlSeesion() {
+    public static SqlSession getSqlSession() {
         return sqlSessionFactory.openSession(true);
     }
 }

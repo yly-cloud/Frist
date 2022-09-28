@@ -17,4 +17,22 @@
         </if>
         ;
     </select>
+
+    <insert id="insert">
+        insert into student
+        values
+        <foreach collection="ins" item="i" separator=",">
+            (null,#{i.name},#{i.age},#{i.email},#{i.pwd})
+        </foreach>;
+    </insert>
+
+    <delete id="delete">
+        delete
+        from student
+        where id in
+        <foreach collection="del" item="d" open="(" close=")" separator=",">
+            #{d}
+        </foreach>
+        ;
+    </delete>
 </mapper>
