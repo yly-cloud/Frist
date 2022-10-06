@@ -8,4 +8,6 @@ public interface UserMapper {
     List<User> selectById(int id);
 
     User selectByName(String user);
+
+    Integer getCount();
 }

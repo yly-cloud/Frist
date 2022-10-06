@@ -20,7 +20,8 @@
     </environments>
 
     <mappers>
-        <mapper resource="com/nsxy/mapper/StudentMapper.xml"/>
+        <!--        <mapper resource="com/nsxy/mapper/StudentMapper.xml"/>-->
+        <package name="com.nsxy.mapper"/>
     </mappers>
 </configuration>
 

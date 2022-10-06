@@ -18,5 +18,9 @@
         where uname = #{uname};
     </select>
 
+    <select id="getCount" resultType="Integer">
+        select count(*)
+        from users;
+    </select>
 
 </mapper>

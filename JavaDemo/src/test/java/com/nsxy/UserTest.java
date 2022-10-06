@@ -31,7 +31,7 @@ public class UserTest {
     }
 
     @Test
-    public void selectById() throws IOException {
+    public void selectById() {
         SqlSessionUtils sqlSessionUtils = new SqlSessionUtils();
 //        String resource = "mybatis-config.xml";
 //        InputStream inputStream = Resources.getResourceAsStream(resource);
@@ -49,13 +49,25 @@ public class UserTest {
     }
 
     @Test
-    public void selectByName() throws IOException {
+    public void selectByName() {
         SqlSessionUtils sqlSessionUtils = new SqlSessionUtils();
         SqlSession sqlSession = sqlSessionUtils.getSqlSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
         User user = mapper.selectByName("张三");
         System.out.println(user);
+
+        sqlSession.close();
+    }
+
+    @Test
+    public void getCount() {
+        SqlSessionUtils sqlSessionUtils = new SqlSessionUtils();
+        SqlSession sqlSession = sqlSessionUtils.getSqlSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        Integer count = mapper.getCount();
+        System.out.println(count);
 
         sqlSession.close();
     }
