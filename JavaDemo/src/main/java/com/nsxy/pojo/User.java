@@ -1,15 +1,24 @@
 package com.nsxy.pojo;
 
 public class User {
-    private int uid;
+    private Integer uid;
     private String uname;
-    private int uage;
+    private Integer uage;
+
+    public User() {
+    }
+
+    public User(Integer uid, String uname, Integer uage) {
+        this.uid = uid;
+        this.uname = uname;
+        this.uage = uage;
+    }
 
     public int getUid() {
         return uid;
     }
 
-    public void setUid(int uid) {
+    public void setUid(Integer uid) {
         this.uid = uid;
     }
 
@@ -25,7 +34,7 @@ public class User {
         return uage;
     }
 
-    public void setUage(int uage) {
+    public void setUage(Integer uage) {
         this.uage = uage;
     }
 

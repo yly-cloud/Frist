@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JavaAnLi" />
+        <module name="mybatis_resultMap" />
         <module name="WebDemo" />
         <module name="JavaDemo" />
         <module name="JavaZuoYe" />

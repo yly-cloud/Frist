@@ -18,5 +18,32 @@
         where uname = #{uname};
     </select>
 
+    <select id="getCount" resultType="Integer">
+        select count(*)
+        from users;
+    </select>
 
+    <select id="getUserByLike" resultType="User">
+        <!--select * from users where uname LIKE '%${mohu}%';-->
+        <!--select *
+        from users
+        where uname LIKE concat('%', #{mohu}, '%');-->
+        select * from users where uname LIKE "%"#{mohu}"%"
+    </select>
+
+    <delete id="deleteMoreUser">
+        delete
+        from users
+        where uid in (${ids});
+    </delete>
+
+    <select id="getUserList" resultType="User">
+        select *
+        from ${tableName}
+    </select>
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="uid">
+        insert into users
+        values (null, #{uname}, #{uage});
+    </insert>
 </mapper>

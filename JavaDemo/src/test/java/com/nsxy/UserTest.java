@@ -71,4 +71,40 @@ public class UserTest {
 
         sqlSession.close();
     }
+
+    @Test
+    public void getUserByLike() {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        List<User> list = mapper.getUserByLike("张");
+//        System.out.println(list);
+        list.forEach(System.out::println);
+        sqlSession.close();
+    }
+
+    @Test
+    public void DeleteMoreUser() {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        mapper.deleteMoreUser("9,10");
+        sqlSession.close();
+    }
+
+    @Test
+    public void getTableName() {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        List<User> userList = mapper.getUserList("users");
+        System.out.println(userList);
+        sqlSession.close();
+    }
+
+    @Test
+    public void insertUser() {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        User user = new User(null, "王五", 20);
+        mapper.insertUser(user);
+        sqlSession.close();
+    }
 }

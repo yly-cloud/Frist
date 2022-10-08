@@ -13,6 +13,7 @@
         <module>JavaDemo</module>
         <module>JavaAnLi</module>
         <module>JavaZuoYe</module>
+        <module>mybatis_resultMap</module>
     </modules>
 
     <properties>
